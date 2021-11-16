@@ -29,6 +29,8 @@ module Enumerable
   # Create #my_select in the same way, though you may use #my_each in your
   # definition (but not #each).
   def my_select
+    return nil unless block_given?
+
     if self.kind_of?(Array)
       pass = []
       for item in self
@@ -49,8 +51,18 @@ module Enumerable
   end
 
   # Create #my_all? (continue as above)
-  # The method returns true if the block never returns false or nil
- 
+  def my_all?
+    return nil unless block_given?
+
+    for item in self
+      if yield item
+        next
+      else
+        return false
+      end
+    end
+    true
+  end
 
   # Create #my_any?
 

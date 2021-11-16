@@ -18,5 +18,11 @@ hash.each_with_index { |(key, value), index| puts "#{index}: #{key}: #{value}" }
 p(arr.my_select { |item| item % 2 == 1 })
 p(arr.select { |item| item % 2 == 1 })
 
-p(hash.my_select { |_key, value| value == 'New York' }) # This doesn't yet work
+p(hash.my_select { |_key, value| value == 'New York' })
 p(hash.select { |_key, value| value == 'New York' })
+
+p(arr.my_all? { |item| item % 2 == 1 })
+p(arr.all? { |item| item % 2 == 1 })
+
+p(hash.my_all? { |_key, value| value == 'New York' })
+p(hash.all? { |_key, value| value == 'New York' })

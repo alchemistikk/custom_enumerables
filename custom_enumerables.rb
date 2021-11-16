@@ -85,10 +85,6 @@ module Enumerable
   end
 
   # Create #my_count
-  # Returns the number of items in enum through enumeration.
-  # If an argument is given, the number of items in enum that are equal
-  # to item are counted. If a block is given, it counts the number of elements
-  # yielding a true value.
   def my_count(elem = nil)
     count = 0
 
@@ -106,6 +102,16 @@ module Enumerable
   end
 
   # Create #my_map
+  def my_map
+    return nil unless block_given?
+
+    arr = []
+    for item in self
+      value = yield item
+      arr << value
+    end
+    arr
+  end
 
   # Create #my_inject
 

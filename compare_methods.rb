@@ -39,8 +39,16 @@ p(arr.none? { |item| item % 2 == 1 })
 p(hash.my_none? { |_key, value| value == 'New' })
 p(hash.none? { |_key, value| value == 'New York' })
 
+p arr.my_count(5)
 p(arr.my_count { |item| item % 2 == 1 })
 p(arr.count { |item| item % 2 == 1 })
 
+p hash.my_count({ :location=>'New York' }) # Not sure how to get this to work
 p(hash.my_count { |_key, value| value == 'New York' })
 p(hash.count { |_key, value| value == 'New York' })
+
+p(arr.my_map { |item| item % 2 == 0 })
+p(arr.map { |item| item % 2 == 1 })
+
+p(hash.my_map { |_key, value| value == 'New' })
+p(hash.map { |_key, value| value == 'New York' })

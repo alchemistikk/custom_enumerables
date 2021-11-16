@@ -26,3 +26,9 @@ p(arr.all? { |item| item % 2 == 1 })
 
 p(hash.my_all? { |_key, value| value == 'New York' })
 p(hash.all? { |_key, value| value == 'New York' })
+
+p(arr.my_any? { |item| item % 2 == 1 })
+p(arr.any? { |item| item % 2 == 1 })
+
+p(hash.my_any? { |_key, value| value == 'New York' })
+p(hash.any? { |_key, value| value == 'New York' })

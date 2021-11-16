@@ -65,6 +65,17 @@ module Enumerable
   end
 
   # Create #my_any?
+  # Passes each element of the collection to the given block. 
+  # The method returns true if the block ever returns a value 
+  # other than false or nil.
+  def my_any?
+    return nil unless block_given?
+
+    for item in self
+      return true if yield item
+    end
+    false
+  end
 
   # Create #my_none?
 

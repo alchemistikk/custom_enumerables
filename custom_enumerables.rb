@@ -28,8 +28,29 @@ module Enumerable
 
   # Create #my_select in the same way, though you may use #my_each in your
   # definition (but not #each).
+  def my_select
+    if self.kind_of?(Array)
+      pass = []
+      for item in self
+        if yield item
+          pass << item
+        end
+      end
+    else
+      pass = {}
+      for key, value in self
+        if yield key, value
+          pass[key] = value
+        end
+      end
+    end
+
+    pass
+  end
 
   # Create #my_all? (continue as above)
+  # The method returns true if the block never returns false or nil
+ 
 
   # Create #my_any?
 

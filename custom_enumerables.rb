@@ -85,6 +85,25 @@ module Enumerable
   end
 
   # Create #my_count
+  # Returns the number of items in enum through enumeration.
+  # If an argument is given, the number of items in enum that are equal
+  # to item are counted. If a block is given, it counts the number of elements
+  # yielding a true value.
+  def my_count(elem = nil)
+    count = 0
+
+    if elem.nil?
+      for item in self
+        count += 1 if yield item
+      end
+    else
+      for item in self
+        count += 1 if item == elem
+      end
+    end
+
+    count
+  end
 
   # Create #my_map
 

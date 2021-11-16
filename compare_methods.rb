@@ -39,4 +39,8 @@ p(arr.none? { |item| item % 2 == 1 })
 p(hash.my_none? { |_key, value| value == 'New' })
 p(hash.none? { |_key, value| value == 'New York' })
 
+p(arr.my_count { |item| item % 2 == 1 })
+p(arr.count { |item| item % 2 == 1 })
 
+p(hash.my_count { |_key, value| value == 'New York' })
+p(hash.count { |_key, value| value == 'New York' })

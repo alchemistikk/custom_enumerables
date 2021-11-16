@@ -2,12 +2,15 @@
 
 require_relative 'custom_enumerables'
 
-arr = [1, 2, 3]
-hash = { food: 'taco', tv: 'samsung' }
+arr = [3, 5, 11, 13, 19]
+hash = { name: 'Steve', location: 'New York', occupation: 'Developer' }
 
-# 1. Compare my_each to each
-arr.my_each { |item| puts item }
-arr.each { |item| puts item }
+arr.my_each { |value| puts value }
+arr.each { |value| puts value }
+hash.my_each { |key, value| puts "#{key}: #{value}" }
+hash.each { |key, value| puts "#{key}: #{value}" }
 
-hash.my_each { |item| puts item }
-hash.each { |item| puts item }
+arr.my_each_with_index { |value, index| puts "#{index}: #{value}" }
+arr.each_with_index { |value, index| puts "#{index}: #{value}" }
+hash.my_each_with_index { |(key, value), index| puts "#{index}: #{key}: #{value}" }
+hash.each_with_index { |(key, value), index| puts "#{index}: #{key}: #{value}" }

@@ -32,3 +32,11 @@ p(arr.any? { |item| item % 2 == 1 })
 
 p(hash.my_any? { |_key, value| value == 'New York' })
 p(hash.any? { |_key, value| value == 'New York' })
+
+p(arr.my_none? { |item| item % 2 == 0 })
+p(arr.none? { |item| item % 2 == 1 })
+
+p(hash.my_none? { |_key, value| value == 'New' })
+p(hash.none? { |_key, value| value == 'New York' })
+
+

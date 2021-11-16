@@ -52,3 +52,10 @@ p(arr.map { |item| item % 2 == 1 })
 
 p(hash.my_map { |_key, value| value == 'New' })
 p(hash.map { |_key, value| value == 'New York' })
+
+my_proc = Proc.new { |item| item + 10 }
+
+p arr.my_map(my_proc)
+
+p(arr.my_inject { |sum, elem| sum + elem })
+p(arr.inject { |sum, elem| sum + elem })

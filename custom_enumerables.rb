@@ -119,19 +119,11 @@ module Enumerable
     arr
   end
 
-  # Create #my_inject
-  def my_inject(init = nil, symbol = nil)
-    if init.nil? && symbol.nil?
-      memo = 0
-      for elem in self
-        memo = yield memo, elem
-      end
-      memo
+  def my_inject
+    acc = 0
+    for elem in self
+      acc = yield acc, elem
     end
-
-    # if init.kind_of?(Symbol)
-    #   symbol = init
-    # end
-
+    acc
   end
 end
